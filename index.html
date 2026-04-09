@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+  <a-scene embedded arjs="trackingMethod: best; sourceType: webcam;">
+    
+    <a-nft
+      type="nft"
+      url="marker/usman"
+      smooth="true"
+    >
+      <a-entity
+        gltf-model="model.glb"
+        scale="50 50 50"
+        position="0 1 0"
+      ></a-entity>
+    </a-nft>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+</body>
+</html>
