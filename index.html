@@ -3,26 +3,6 @@
 <head>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
-  <script>
-AFRAME.registerComponent('auto-fit-nft', {
-  init: function () {
-    var el = this.el;
-    el.addEventListener('model-loaded', function () {
-      var mesh = el.getObject3D('mesh');
-      if (!mesh) return;
-      var box = new THREE.Box3().setFromObject(mesh);
-      var size = new THREE.Vector3();
-      box.getSize(size);
-      var maxDim = Math.max(size.x, size.y, size.z);
-      var scaleFactor = 1.0 / maxDim;
-      var center = new THREE.Vector3();
-      box.getCenter(center);
-      el.setAttribute('scale', {x: scaleFactor, y: scaleFactor, z: scaleFactor});
-      el.setAttribute('position', {x: -center.x * scaleFactor, y: -center.z * scaleFactor, z: 0});
-    });
-  }
-});
-</script>
 </head>
 
 <body style="margin: 0; overflow: hidden;">
@@ -38,7 +18,7 @@ AFRAME.registerComponent('auto-fit-nft', {
     >
       <a-entity
         gltf-model="https://ug323788-cmd.github.io/AR/model.glb"
-        auto-fit-nft
+        position="0 0 0"
         scale="50 50 50"
         rotation="0 0 0"
         ></a-entity>
